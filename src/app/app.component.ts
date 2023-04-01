@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ang20app';
+  count=0;
+  inc(){
+    this.count++;
+  }
 }
