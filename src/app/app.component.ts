@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  a = 'Edupoly'
   title = 'ang20app';
+  abc(){
+    alert("HI")
+  }
+  
 }
