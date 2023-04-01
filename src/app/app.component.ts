@@ -11,4 +11,7 @@ export class AppComponent {
   inc(){
     this.count++;
   }
+  dec(){
+    this.count--;
+  }
 }
