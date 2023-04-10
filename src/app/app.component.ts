@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ang20app';
+  myname='prudvi'
+  abc(c:any){
+    alert(c)
+  }
 }
