@@ -12,19 +12,24 @@ export class AppComponent {
   res:any;
   constructor(public aS:ArthService){}
   a(){
-    var r = this.aS.add(this.n1,this.n2)
-    this.res=r;
+    this.aS.add(this.n1,this.n2,(r:any)=>{this.res=r})
   }
   s(){
-    var r = this.aS.sub(this.n1,this.n2);
-    this.res=r;
+    this.aS.sub(this.n1,this.n2)
+    .subscribe({
+      next:(res)=>{console.log('next',res)},
+      complete:()=>{console.log('complete')},
+      error:(err)=>{console.log(err)}
+    })
+    
   }
   m(){
     var r = this.aS.mul(this.n1,this.n2)
     this.res=r;
   }
   d(){
-    var r = this.aS.div(this.n1,this.n2);
-    this.res=r;
+    this.aS.div(this.n1,this.n2)
+    .then((data)=>{this.res=data})
+    .catch((err)=>{this.res=err})
   }
 }

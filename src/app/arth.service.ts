@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,20 +8,22 @@ export class ArthService {
 
   constructor() { }
 
-  add(a:number,b:number){
-    return Number(a)+Number(b);
+  add(a:number,b:number,cb:any){
+    cb(Number(a)+Number(b))
   }
   sub(a:number,b:number){
-    return a-b;
+    return of(a-b)
   }
   mul(a:number,b:number){
     return a*b;
   }
   div(a:number,b:number){
-    if(b===0){
-      return 'Denominator cannot be ZERO... please give a valid value'
+    if(Number(b)===0){
+      return Promise.reject('Denominator cannot be ZERO... please give a valid value')
     }
-    return a/b;
+    else{
+      return Promise.resolve(a/b)
+    }
   }
 }
 // normal functions directly return result
