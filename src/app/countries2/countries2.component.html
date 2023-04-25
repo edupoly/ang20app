@@ -1,0 +1,10 @@
+<div style="display:flex;height:100%;">
+  <ul style="height:400px;overflow-y: scroll;">
+    <li *ngFor="let c of countries">
+      <a routerLink="/countrydetails2" [queryParams]="abc(c)">{{c.name.common}}</a>
+    </li>
+  </ul>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
