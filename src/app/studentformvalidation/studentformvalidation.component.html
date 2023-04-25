@@ -1,0 +1,23 @@
+<div [formGroup]="studentForm">
+    <input type="text" formControlName="firstname"><br>
+    <div *ngIf="studentForm.controls.firstname">
+        <div *ngIf="studentForm.controls.firstname.touched && studentForm.controls.firstname.errors">
+            <div *ngIf="studentForm.controls.firstname.errors['required']">
+                *First Name is Required Field
+            </div>
+            <div *ngIf="studentForm.controls.firstname.errors['minlength']">
+                *First Name must be more than 3 letter
+            </div>
+        </div>
+    </div>
+    <input type="text" formControlName="lastname"><br>
+    <div *ngIf="studentForm.controls.lastname">
+        <div *ngIf="studentForm.controls.lastname.touched && studentForm.controls.lastname.errors">
+            <div *ngIf="studentForm.controls.lastname.errors['required']">
+                *Last Name is Required Field
+            </div>
+        </div>
+    </div>
+    <input type="text" formControlName="age"><br>
+    <button (click)="addStudent()">Add Student</button>
+</div>
