@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AbcdComponent } from './abcd/abcd.component';
+import { Check1Guard } from './check1.guard';
 import { CountriesComponent } from './countries/countries.component';
 import { Countries2Component } from './countries2/countries2.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   },
   {
     path:"xyz",
-    component:XyzComponent
+    component:XyzComponent,
+    canActivate:[Check1Guard]
   },
   {
     path:"countries",
