@@ -1,7 +1,12 @@
-<input type="text" [(ngModel)]="n1"><br>
-<input type="text" [(ngModel)]="n2"><br>
-<button (click)="a()">Add</button>
-<button (click)="s()">Sub</button>
-<button (click)="d()">Div</button>
-<button (click)="m()">Mul</button>
-<h1>Result:{{res}}</h1>
+<div class="border border-2 m-2 p-2">
+    <h1>App Component</h1>
+    <div class="d-flex flex-wrap">
+        <div class="w-50">
+            <app-first></app-first>
+        </div>
+        <div class="w-50">
+            <app-second></app-second>
+        </div>
+    </div>
+    
+</div>
